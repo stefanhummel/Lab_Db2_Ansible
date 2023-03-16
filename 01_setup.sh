@@ -1,7 +1,7 @@
 #!/bin/sh
 #################################################################
 # Project:	Lab_Db2_Ansible                                     #
-# Skript:	01_setup.sh                       #
+# Skript:	01_setup.sh                                         #
 # Author:   Stefan Hummel                                       #
 # Company:	IBM Germany                                         #
 # Creation: 14.03.2023                                          #
