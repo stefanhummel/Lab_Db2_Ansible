@@ -18,6 +18,8 @@
 USER=`whoami`
 HOSTNAME=`uname -n`
 XVDA2=`df -Ph | grep xvda2 | awk '{print $4}' | tr -d '\n'`
+#RHEL
+XVDA2=`df -Ph | grep home | awk '{print $4}' | tr -d '\n'`
 ROOT=`df -Ph | grep root | awk '{print $4}' | tr -d '\n'`
 HOME=`df -Ph | grep home | awk '{print $4}' | tr -d '\n'`
 BACKUP=`df -Ph | grep backup | awk '{print $4}' | tr -d '\n'`
@@ -49,17 +51,14 @@ LOAD1=`cat /proc/loadavg | awk {'print $1'}`
 LOAD5=`cat /proc/loadavg | awk {'print $2'}`
 LOAD15=`cat /proc/loadavg | awk {'print $3'}`
 
-RELEASE=`lsb_release -d | awk {'print $2 " " $3 " " $4'}`
+#Ubuntu
+#RELEASE=`lsb_release -d | awk {'print $2 " " $3 " " $4'}`
 
-echo "
-███████╗███████╗██████╗ ██╗   ██╗███████╗██████╗  ██╗
-██╔════╝██╔════╝██╔══██╗██║   ██║██╔════╝██╔══██╗███║
-███████╗█████╗  ██████╔╝██║   ██║█████╗  ██████╔╝╚██║
-╚════██║██╔══╝  ██╔══██╗╚██╗ ██╔╝██╔══╝  ██╔══██╗ ██║
-███████║███████╗██║  ██║ ╚████╔╝ ███████╗██║  ██║ ██║
-╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝ ╚═╝
-                                                     
-Good $TIME $USER"
+#RHEL
+RELEASE=`cat /etc/redhat-release`
+
+figlet `hostname --short` -f Roman
+echo "Good $TIME $USER"
 
 echo "
 ===========================================================================
